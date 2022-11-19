@@ -4,6 +4,7 @@ const konstaConfig = require("konsta/config");
 // wrap config with konstaConfig config
 module.exports = konstaConfig({
   content: [
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -14,5 +15,5 @@ module.exports = konstaConfig({
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 });
