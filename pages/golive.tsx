@@ -7,17 +7,14 @@ import Layout from "./../components/Layout";
 const Golive = () => {
   return (
     <Layout>
-      <Navbar title="Choose game"></Navbar>
-      <div className="flex justify-center">
+      <Navbar className="" title="Choose game"></Navbar>
+
+      <div className="mx-4  gap-4  grid grid-cols-2 justify-center">
         <GameSelectCard rate={5} name="hi" />
         <GameSelectCard rate={5} name="hi" />
         <GameSelectCard rate={5} name="hi" />
-      </div>
-      <div className="flex justify-center">
         <GameSelectCard rate={5} name="hi" />
         <GameSelectCard rate={5} name="hi" />
-      </div>
-      <div className="flex justify-center">
         <GameSelectCard rate={5} name="hi" />
       </div>
     </Layout>
