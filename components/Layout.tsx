@@ -7,8 +7,8 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
   const router = useRouter();
   return (
     <Page>
-      {props.children}
-      <Tabbar icons={true} className="left-0 bottom-0 fixed">
+      <div className="mb-20">{props.children}</div>
+      <Tabbar icons={true} className="left-0 bottom-0 h-20 fixed">
         <TabbarLink
           active={router.pathname == "/myaccount"}
           onClick={() => {
