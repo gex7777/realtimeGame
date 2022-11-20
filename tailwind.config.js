@@ -15,5 +15,5 @@ module.exports = konstaConfig({
   variants: {
     extend: {},
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [require("flowbite/plugin"), require("daisyui")],
 });
