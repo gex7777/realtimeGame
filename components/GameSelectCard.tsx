@@ -6,7 +6,7 @@ interface Iprops {
 }
 const GameSelectCard: FC<Iprops> = ({ rate, name }) => {
   return (
-    <div className="card  bg-base-100 shadow-xl">
+    <div className="card w-44 sm:w-auto  bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img
           src="https://placeimg.com/400/225/arch"
