@@ -15,10 +15,10 @@ const GameSelectCard: FC<Iprops> = ({ rate, name }) => {
         />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">${rate}</h2>
+
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">Play</button>
         </div>
       </div>
     </div>
