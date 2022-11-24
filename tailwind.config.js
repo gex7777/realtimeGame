@@ -9,6 +9,12 @@ module.exports = konstaConfig({
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "media", // or 'class'
+  konsta: {
+    colors: {
+      // "primary" is the main app color, if not specified will be default to '#007aff'
+      primary: "#007aff",
+    },
+  },
   theme: {
     extend: {},
   },
