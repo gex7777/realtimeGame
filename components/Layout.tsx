@@ -1,23 +1,29 @@
-import { Icon, Page, Tabbar, TabbarLink } from "konsta/react";
+import { Icon, Navbar, Page, Tabbar, TabbarLink } from "konsta/react";
 import React, { FC, useState } from "react";
 import { Bitcoin, GoLive, MyAccount, Reward, Withdraw } from "../icons";
 
 import { useRouter } from "next/router";
+import NavAvatar from "./NavAvatar";
 const Layout: FC<{ children: React.ReactNode }> = (props) => {
   const router = useRouter();
   return (
     <Page>
-      <div className="mb-20">{props.children}</div>
+      <Navbar
+        title={`${router.pathname.replace("/", "").replace("-", " ")}`}
+        right={<NavAvatar></NavAvatar>}
+      ></Navbar>
+      <div className="mb-20 container">{props.children}</div>
       <Tabbar icons={true} className="left-0 bottom-0 h-20 fixed">
         <TabbarLink
-          active={router.pathname == "/myaccount"}
+          active={router.pathname == "/my-account"}
           onClick={() => {
-            router.push("/myaccount");
+            router.push("/my-account");
           }}
           label={"My account"}
           icon={
             <Icon
               material={<MyAccount className={` h-5 w-5 fill-orange-600 `} />}
+              ios={<MyAccount className={` h-5 w-5 fill-orange-600 `} />}
             />
           }
         />
@@ -28,7 +34,10 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           }}
           label={"Rewards"}
           icon={
-            <Icon material={<Reward className="h-5 w-5 fill-orange-600 " />} />
+            <Icon
+              material={<Reward className="h-5 w-5 fill-orange-600 " />}
+              ios={<Reward className="h-5 w-5 fill-orange-600 " />}
+            />
           }
         />
         <TabbarLink
@@ -40,17 +49,21 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           icon={
             <Icon
               material={<Withdraw className="h-5 w-5 fill-orange-600 " />}
+              ios={<Withdraw className="h-5 w-5 fill-orange-600 " />}
             />
           }
         />
         <TabbarLink
-          active={router.pathname == "/golive"}
+          active={router.pathname == "/go-live"}
           onClick={() => {
-            router.push("/golive");
+            router.push("/go-live");
           }}
           label={"Go Live"}
           icon={
-            <Icon material={<GoLive className="h-5 w-5 fill-orange-600 " />} />
+            <Icon
+              material={<GoLive className="h-5 w-5 fill-orange-600 " />}
+              ios={<GoLive className="h-5 w-5 fill-orange-600 " />}
+            />
           }
         />
 
@@ -61,7 +74,10 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           }}
           label={"Bitcoins"}
           icon={
-            <Icon material={<Bitcoin className="h-5 w-5 fill-orange-600 " />} />
+            <Icon
+              material={<Bitcoin className="h-5 w-5 fill-orange-600 " />}
+              ios={<Bitcoin className="h-5 w-5 fill-orange-600 " />}
+            />
           }
         />
       </Tabbar>
