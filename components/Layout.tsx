@@ -12,7 +12,7 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
         title={`${router.pathname.replace("/", "").replace("-", " ")}`}
         right={<NavAvatar></NavAvatar>}
       ></Navbar>
-      <div className="mb-20 container">{props.children}</div>
+      <div className="flex justify-center  mb-20">{props.children}</div>
       <Tabbar icons={true} className="left-0 bottom-0 h-20 fixed">
         <TabbarLink
           active={router.pathname == "/my-account"}

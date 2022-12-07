@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 const Golive = () => {
   return (
     <Layout>
-      <div className="mx-4  gap-4  grid grid-cols-2 place-content-center">
+      <div className="  gap-2  grid grid-cols-2 place-content-center">
         <GameSelectCard rate={1} name="hi" />
         <GameSelectCard rate={5} name="hi" />
         <GameSelectCard rate={10} name="hi" />
