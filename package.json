@@ -11,6 +11,7 @@
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.5.2",
     "@supabase/auth-helpers-react": "^0.3.1",
+    "@supabase/auth-ui-react": "^0.2.6",
     "@supabase/supabase-js": "^2.1.1",
     "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.9",

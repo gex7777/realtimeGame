@@ -2,8 +2,10 @@ import { Avatar } from "flowbite-react";
 import React from "react";
 import Layout from "../components/Layout";
 import NavAvatar from "../components/NavAvatar";
+import { useSession } from "@supabase/auth-helpers-react";
 
 const Myaccount = () => {
+  const session = useSession();
   return (
     <Layout>
       <div className="h-full w-full">
