@@ -12,7 +12,7 @@ const Myaccount = () => {
         <div className="bg-opacity-100">
           <div className="tabs w-full flex-grow-0">
             <button className="tab tab-lifted tab-border-none tab-lg flex-1">
-              Profile
+              Profileer
             </button>
             <button className="tab tab-lifted  tab-active tab-border-none tab-lg flex-1">
               Balance
