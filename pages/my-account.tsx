@@ -7,7 +7,7 @@ import { useSession } from "@supabase/auth-helpers-react";
 const Myaccount = () => {
   const session = useSession();
   return (
-    <Layout>
+    <div>
       <div className="h-full w-full">
         <div className="bg-opacity-100">
           <div className="tabs w-full flex-grow-0">
@@ -94,7 +94,7 @@ const Myaccount = () => {
           <div className="btn"> Claim rewards</div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

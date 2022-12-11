@@ -26,7 +26,7 @@ export default function Home() {
           theme="dark"
         />
       ) : (
-        <Layout>
+        <div>
           <Navbar title="My App" />
 
           <Block>
@@ -44,7 +44,7 @@ export default function Home() {
             <Button>Button 1</Button>
             <Button>Button 2</Button>
           </Block>
-        </Layout>
+        </div>
       )}
     </div>
   );
