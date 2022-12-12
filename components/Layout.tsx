@@ -12,7 +12,7 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
         title={`${router.pathname.replace("/", "").replace("-", " ")}`}
         right={<NavAvatar></NavAvatar>}
       ></Navbar>
-      <div className="flex justify-center  mb-20">{props.children}</div>
+      <div className="flex justify-items-stretch mb-20">{props.children}</div>
       <Tabbar icons={true} className="left-0 bottom-0 h-20 fixed">
         <TabbarLink
           active={router.pathname == "/my-account"}
@@ -22,8 +22,8 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           label={"My account"}
           icon={
             <Icon
-              material={<MyAccount className={` h-5 w-5 fill-orange-600 `} />}
-              ios={<MyAccount className={` h-5 w-5 fill-orange-600 `} />}
+              material={<MyAccount className={` h-5 w-5 fill-primary `} />}
+              ios={<MyAccount className={` h-5 w-5 fill-primary `} />}
             />
           }
         />
@@ -35,8 +35,8 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           label={"Rewards"}
           icon={
             <Icon
-              material={<Reward className="h-5 w-5 fill-orange-600 " />}
-              ios={<Reward className="h-5 w-5 fill-orange-600 " />}
+              material={<Reward className="h-5 w-5 fill-primary " />}
+              ios={<Reward className="h-5 w-5 fill-primary " />}
             />
           }
         />
@@ -48,21 +48,21 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           label={"Withdraws"}
           icon={
             <Icon
-              material={<Withdraw className="h-5 w-5 fill-orange-600 " />}
-              ios={<Withdraw className="h-5 w-5 fill-orange-600 " />}
+              material={<Withdraw className="h-5 w-5 fill-primary " />}
+              ios={<Withdraw className="h-5 w-5 fill-primary " />}
             />
           }
         />
         <TabbarLink
-          active={router.pathname == "/go-live"}
+          active={router.pathname == "/go-live" || router.pathname == "/game"}
           onClick={() => {
             router.push("/go-live");
           }}
           label={"Go Live"}
           icon={
             <Icon
-              material={<GoLive className="h-5 w-5 fill-orange-600 " />}
-              ios={<GoLive className="h-5 w-5 fill-orange-600 " />}
+              material={<GoLive className="h-5 w-5 fill-primary " />}
+              ios={<GoLive className="h-5 w-5 fill-primary " />}
             />
           }
         />
@@ -75,8 +75,8 @@ const Layout: FC<{ children: React.ReactNode }> = (props) => {
           label={"Bitcoins"}
           icon={
             <Icon
-              material={<Bitcoin className="h-5 w-5 fill-orange-600 " />}
-              ios={<Bitcoin className="h-5 w-5 fill-orange-600 " />}
+              material={<Bitcoin className="h-5 w-5 fill-primary " />}
+              ios={<Bitcoin className="h-5 w-5 fill-primary " />}
             />
           }
         />
