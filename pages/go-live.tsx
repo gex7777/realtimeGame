@@ -1,8 +1,6 @@
-import { Card, Carousel, Dropdown } from "flowbite-react";
-import { Button, Link, Navbar } from "konsta/react";
 import React from "react";
 import GameSelectCard from "../components/GameSelectCard";
-import Layout from "../components/Layout";
+
 import oneDollar from "../public/1-12-12-2022.png";
 import fiveDollar from "../public/5-12-12-2022.png";
 import tenDollar from "../public/10-12-12-2022.png";

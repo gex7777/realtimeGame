@@ -1,6 +1,6 @@
 import { Avatar } from "flowbite-react";
 import React, { useState } from "react";
-import Layout from "../components/Layout";
+
 import NavAvatar from "../components/NavAvatar";
 import { useSession } from "@supabase/auth-helpers-react";
 import { FiEdit } from "react-icons/fi";
