@@ -122,7 +122,7 @@ const Myaccount = () => {
                           <div className="stat-value">$89,400</div>
                           <div className="stat-actions">
                             <button className="btn btn-xs btn-success">
-                              Add funds
+                              Add fund
                             </button>
                           </div>
                         </div>
