@@ -1,4 +1,3 @@
-import { Avatar } from "flowbite-react";
 import React, { useState } from "react";
 
 import NavAvatar from "../components/NavAvatar";
@@ -40,7 +39,7 @@ const Myaccount = () => {
         </div>
       </div>
 
-      <div className="bg-base-100 grid w-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
+      <div className="bg-base-100 grid w-full h-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
         {!session ? (
           <>
             <Login />

@@ -1,13 +1,13 @@
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
-import { Block, Link, Navbar, Page, Popup } from "konsta/react";
+import { Link, Navbar, Page, Popup } from "konsta/react";
 import React, { useState } from "react";
 
 const Login = () => {
   const supabase = useSupabaseClient();
   const [popupOpened, setPopupOpened] = useState(false);
   return (
-    <div>
+    <div className="">
       <div className="flex justify-center items-center flex-col">
         <div className="btn btn-primary" onClick={() => setPopupOpened(true)}>
           Login
