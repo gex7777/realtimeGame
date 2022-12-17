@@ -9,7 +9,7 @@ const Myaccount = () => {
 
   const [activeTab, setActiveTab] = useState(1);
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full flex  flex-col">
       <div className="bg-opacity-100">
         <div className="tabs w-full flex-grow-0">
           <button
@@ -39,7 +39,7 @@ const Myaccount = () => {
         </div>
       </div>
 
-      <div className="bg-base-100 grid w-full h-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
+      <div className="bg-base-100 grid self-stretch w-full h-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
         {!session ? (
           <>
             <Login />
