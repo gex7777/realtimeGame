@@ -42,7 +42,7 @@ const Myaccount = () => {
       <div className="bg-base-100 grid self-stretch w-full h-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
         {!session ? (
           <>
-            <Login />
+            <Login /
           </>
         ) : (
           <>
