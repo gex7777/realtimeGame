@@ -61,7 +61,7 @@ const Myaccount = () => {
                               Beatrice Thurman
                             </div>
                             <div className="text-base-content/70 text-sm">
-                              #tag
+                            
                             </div>
                           </div>
                           <div className="btn btn btn-xs btn-primary">
