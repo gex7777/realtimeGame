@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
 import NavAvatar from "../components/NavAvatar";
-import { useSession } from "@supabase/auth-helpers-react";
+import { useUser } from "@supabase/auth-helpers-react";
 import { FiEdit } from "react-icons/fi";
-import Login from "../components/Login";
+
+import LoginOrSignUp from "./../components/LoginorSignup";
 const Myaccount = () => {
-  const session = useSession();
+  const user = useUser();
 
   const [activeTab, setActiveTab] = useState(1);
   return (
-    <div className="h-full w-full flex  flex-col">
+    <div className="h-screen w-full flex  flex-col">
       <div className="bg-opacity-100">
         <div className="tabs w-full flex-grow-0">
           <button
@@ -39,10 +40,10 @@ const Myaccount = () => {
         </div>
       </div>
 
-      <div className="bg-base-100 grid self-stretch w-full h-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
-        {!session ? (
+      <div className="bg-base-100  grid self-stretch w-full h-full flex-grow gap-3 rounded-xl rounded-tl-none p-6 shadow-xl">
+        {!user ? (
           <>
-            <Login />
+            <LoginOrSignUp />
           </>
         ) : (
           <>
@@ -60,11 +61,9 @@ const Myaccount = () => {
                             <div className="text-lg font-extrabold">
                               Beatrice Thurman
                             </div>
-                            <div className="text-base-content/70 text-sm">
-                            
-                            </div>
+                            <div className="text-base-content/70 text-sm"></div>
                           </div>
-                          <div className="btn btn btn-xs btn-primary">
+                          <div className="btn btn-xs btn-primary">
                             <FiEdit />
                           </div>
                         </div>
