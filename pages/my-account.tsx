@@ -1,14 +1,23 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import NavAvatar from "../components/NavAvatar";
-import { useUser } from "@supabase/auth-helpers-react";
+import {
+  useSupabaseClient,
+  useUser,
+  useSession,
+} from "@supabase/auth-helpers-react";
 import { FiEdit } from "react-icons/fi";
-
+type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
 import LoginOrSignUp from "./../components/LoginorSignup";
-const Myaccount = () => {
-  const user = useUser();
+import Avatar from "../components/Avatar";
+import { Database } from "../utils/database.types";
+import Profile from "../components/Profile";
 
+const Myaccount = () => {
+  const supabaseClient = useSupabaseClient();
+  const user = useUser();
   const [activeTab, setActiveTab] = useState(1);
+
   return (
     <div className="h-screen w-full flex  flex-col">
       <div className="bg-opacity-100">
@@ -50,67 +59,7 @@ const Myaccount = () => {
             {(() => {
               switch (activeTab) {
                 case 1:
-                  return (
-                    <>
-                      <div className="flex items-center space-x-2">
-                        <div>
-                          <NavAvatar />
-                        </div>
-                        <div className="flex justify-between w-full">
-                          <div>
-                            <div className="text-lg font-extrabold">
-                              Beatrice Thurman
-                            </div>
-                            <div className="text-base-content/70 text-sm"></div>
-                          </div>
-                          <div className="btn btn-xs btn-primary">
-                            <FiEdit />
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="divider text-base-content/60 m-0">
-                          Reports
-                        </div>
-                      </div>
-                      <div className="text-lg font-extrabold">Chalanges</div>{" "}
-                      <div className="grid gap-3">
-                        <div>
-                          <div className="flex items-center p-1">
-                            <span className="text-base-content/70 w-48 text-xs">
-                              Play 10 games
-                            </span>{" "}
-                            <progress
-                              max="100"
-                              value="50"
-                              className="progress progress-success"
-                            ></progress>
-                          </div>{" "}
-                          <div className="flex items-center p-1">
-                            <span className="text-base-content/70 w-48 text-xs">
-                              Invite 5 users
-                            </span>{" "}
-                            <progress
-                              max="100"
-                              value="30"
-                              className="progress progress-primary"
-                            ></progress>
-                          </div>
-                          <div className="flex items-center p-1">
-                            <span className="text-base-content/70 w-48 text-xs">
-                              Add 100$ total
-                            </span>{" "}
-                            <progress
-                              max="100"
-                              value="70"
-                              className="progress progress-secondary"
-                            ></progress>
-                          </div>{" "}
-                        </div>
-                      </div>
-                      <div className="btn"> Claim rewards</div>
-                    </>
-                  );
+                  return <Profile user={user} />;
                 case 2:
                   return (
                     <>
