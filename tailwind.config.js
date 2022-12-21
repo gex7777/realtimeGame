@@ -16,7 +16,16 @@ module.exports = konstaConfig({
     },
   },
   theme: {
-    extend: {},
+    colors: {
+      // "primary" is the main app color, if not specified will be default to '#007aff'
+      primary: "#007aff",
+    },
+    extend: {
+      colors: {
+        // "primary" is the main app color, if not specified will be default to '#007aff'
+        primary: "#007aff",
+      },
+    },
   },
   variants: {
     extend: {},
