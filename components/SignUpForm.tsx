@@ -3,11 +3,6 @@ import React from "react";
 const SignUpForm = () => {
   return (
     <div className="flex flex-col m-3 ">
-      <ul className="steps ">
-        <li className="step step-primary">Account Details</li>
-        <li className="step">Verification</li>
-        <li className="step ">Bank Details</li>
-      </ul>
       <form className="space-y-4 md:space-y-6" action="#">
         <div>
           <label
@@ -84,15 +79,11 @@ const SignUpForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          className="w-full btn btn-primary text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
         >
-          Create an account
+          Sign up
         </button>
       </form>
-      <div className=" flex flex-row-reverse justify-between items-center">
-        <div className="btn  btn-primary">Next</div>
-        <div className="btn disabled ">Prev</div>
-      </div>
     </div>
   );
 };
