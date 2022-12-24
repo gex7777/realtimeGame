@@ -1,7 +1,7 @@
 import { Room, Client } from "colyseus";
 import { MyRoomState } from "./schema/MyRoomState";
 
-export class MyRoom extends Room<MyRoomState> {
+export class OneOrTwo extends Room<MyRoomState> {
   onCreate(options: any) {
     this.setState(new MyRoomState());
 
