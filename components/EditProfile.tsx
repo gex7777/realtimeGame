@@ -1,5 +1,5 @@
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
-import { Block, Link, Navbar, Page } from "konsta/react";
+import { Block, Button, Link, Navbar, Page, Toast } from "konsta/react";
 import React, { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Database } from "../utils/database.types";
@@ -16,6 +16,8 @@ const EditProfile = ({ setPopupOpened }: Iprops) => {
   const user = useUser();
   const supabase = useSupabaseClient<Database>();
   const [loading, setLoading] = useState(true);
+
+  const [toastOpened, setToastOpened] = useState(false);
   const [avatar_url, setAvatarUrl] = useState<Profiles["avatar_url"]>(null);
   const {
     register,
@@ -81,7 +83,7 @@ const EditProfile = ({ setPopupOpened }: Iprops) => {
       console.log(updates);
       let { error } = await supabase.from("profiles").upsert(updates);
       if (error) throw error;
-      alert("Profile updated!");
+      setToastOpened(true);
     } catch (error) {
       alert("Error updating the data!");
       console.log(error);
@@ -99,7 +101,7 @@ const EditProfile = ({ setPopupOpened }: Iprops) => {
           </Link>
         }
       />
-      <div className="flex m-3  flex-col items-center">
+      <div className="flex m-3  flex-col justify-center items-stretch">
         {!!user && (
           <Avatar
             uid={user.id}
@@ -144,11 +146,28 @@ const EditProfile = ({ setPopupOpened }: Iprops) => {
             ) : null}
           </div>
 
-          <button type="submit" disabled className="btn ">
+          <button type="submit" className="btn ">
             Change
           </button>
         </form>
       </div>
+      <Toast
+        position="left"
+        opened={toastOpened}
+        button={
+          <Button
+            rounded
+            clear
+            small
+            inline
+            onClick={() => setToastOpened(false)}
+          >
+            Close
+          </Button>
+        }
+      >
+        <div className="shrink">Profile updated!</div>
+      </Toast>
     </Page>
   );
 };
