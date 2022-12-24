@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GameSelectCard from "../components/GameSelectCard";
 
 import oneDollar from "../public/1-12-12-2022.png";
@@ -7,7 +7,23 @@ import tenDollar from "../public/10-12-12-2022.png";
 import twentyDollar from "../public/20-12-12-2022.png";
 import hundredDollar from "../public/100-12-12-2022.png";
 import thousandDollar from "../public/1000-12-12-2022.png";
+import { Client } from "colyseus.js";
+
 const Golive = () => {
+  console.log();
+
+  const gameClient = new Client(`ws://localhost:2567`);
+  useEffect(() => {
+    gameClient
+      .joinOrCreate("lobby")
+      .then((room) => {
+        console.log(room.sessionId, "joined", room.name);
+      })
+      .catch((e) => {
+        console.log("JOIN ERROR", e);
+      });
+  }, []);
+
   return (
     <div className="w-full  gap-2  grid grid-cols-2 place-items-center place-content-stretch">
       <GameSelectCard rate={1} src={oneDollar} name="sample" userCount={890} />
